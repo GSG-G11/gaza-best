@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Search, MoviesWrapper, Container } from '../Components';
+import {
+  Search, MoviesWrapper, Container, ScrollUp,
+} from '../Components';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -39,6 +41,7 @@ function Home() {
         searchTerm={searchTerm}
         loading={loading}
       />
+      <ScrollUp />
     </Container>
   );
 }

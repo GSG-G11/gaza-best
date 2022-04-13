@@ -12,6 +12,7 @@ function App() {
     <MovieContext.Provider value={movieMemo}>
       <Nav />
       <Background />
+      {/* <ScrollUp /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie" element={<Movie movie={movie} />} />
