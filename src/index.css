@@ -142,6 +142,7 @@ body::before {
   align-items: center;
   margin-inline: -15px;
   flex-wrap: wrap;
+  margin-top: 100px;
 }
 
 .card-top {
@@ -261,6 +262,11 @@ form #search-field {
 .card .txt .genres {
   margin-block: 25px;
   font-weight: bold;
+  text-align: center;
+}
+
+.card .txt .genres span {
+  display: block;
 }
 
 .card .txt .download {
@@ -276,6 +282,9 @@ form #search-field {
   transition: var(--main-transition);
   transform: translateY(126px);
   opacity: 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .card .txt:hover .download {
@@ -347,4 +356,59 @@ form #search-field {
 
 .footer .title:visited {
   color: rgb(255 255 255 / 0.85);
+}
+
+.loader {
+  width: 10em;
+  height: 10em;
+  font-size: 25px;
+  box-sizing: border-box;
+  border-top: 0.3em solid hotpink;
+  border-radius: 50%;
+  position: relative;
+  animation: rotating 2s ease-in-out infinite;
+  --direction: 1;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  box-sizing: border-box;
+  top: -0.2em;
+}
+
+.loader::before {
+  border-top: 0.3em solid dodgerblue;
+  transform: rotate(120deg);
+}
+
+.loader::after {
+  border-top: 0.3em solid gold;
+  transform: rotate(240deg);
+}
+
+.loader span {
+  position: absolute;
+  color: white;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: 10em;
+  font-family: sans-serif;
+  animation: rotating 2s linear infinite;
+  --direction: -1;
+}
+
+@keyframes rotating {
+  50% {
+      transform: rotate(calc(180deg * var(--direction)));
+  }
+
+  100% {
+      transform: rotate(calc(360deg * var(--direction)));
+  }
 }
