@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Search(props) {
   const { searchTerm, setSearchTerm } = props;
@@ -21,8 +21,8 @@ function Search(props) {
 }
 
 Search.propTypes = {
-  searchTerm: propTypes.string.isRequired,
-  setSearchTerm: propTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.func.isRequired,
 };
 
 export default Search;

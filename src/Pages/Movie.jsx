@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Movie() {
+function Movie(props) {
+  const { movieId } = props;
+
   return (
-    <div>Movie</div>
+    <div>{movieId}</div>
   );
 }
+
+Movie.propTypes = {
+  movieId: PropTypes.number.isRequired,
+};
 
 export default Movie;
