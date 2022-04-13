@@ -13,6 +13,7 @@
   },
   "plugins": ["react"],
   "rules": {
+    "no-nested-ternary": "off"
   }
 }
 

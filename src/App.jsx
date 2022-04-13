@@ -1,26 +1,22 @@
 import React, { useState, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Nav, Background } from './Components';
 import { Home, Movie, NotFound } from './Pages';
 import MovieContext from './Contexts';
 
 function App() {
   const [movie, setMovie] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const movieMemo = useMemo(() => ({
-    movie, setMovie, loading, setLoading,
-  }), [loading]);
+  const movieMemo = useMemo(() => ({ movie, setMovie }), []);
 
   return (
     <MovieContext.Provider value={movieMemo}>
-      <Router>
-        <Nav />
-        <Background />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movie" element={movie.id ? <Movie movie={movie} /> : <NotFound />} />
-        </Routes>
-      </Router>
+      <Nav />
+      <Background />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie" element={<Movie movie={movie} />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </MovieContext.Provider>
   );
 }

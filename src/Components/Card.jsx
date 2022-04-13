@@ -55,14 +55,19 @@ function Card({ movieInfo }) {
 }
 
 Card.propTypes = {
-  movieInfo: PropTypes.objectOf().isRequired,
-  title_english: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  medium_cover_image: PropTypes.string.isRequired,
-  imdb_code: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  movieInfo: PropTypes.shape({
+    title_english: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    medium_cover_image: PropTypes.string.isRequired,
+    imdb_code: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+};
+
+Card.defaultProps = {
+  movieInfo: {},
 };
 
 export default Card;

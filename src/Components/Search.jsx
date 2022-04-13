@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import MovieContext from '../Contexts';
 
 function Search(props) {
-  const { searchTerm, setSearchTerm } = props;
-  const { setLoading } = useContext(MovieContext);
+  const { searchTerm, setSearchTerm, setLoading } = props;
 
   return (
     <form>
@@ -28,6 +26,7 @@ function Search(props) {
 Search.propTypes = {
   searchTerm: PropTypes.string.isRequired,
   setSearchTerm: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
 export default Search;
