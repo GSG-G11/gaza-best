@@ -1,17 +1,18 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function Button({ onClick, text }) {
+function Button({ onClick, className = '', children }) {
   return (
-    <button value="name" type="button" onClick={() => onClick()}>
-      {text}
+    <button className={className} value="name" type="button" onClick={onClick}>
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  onClick: propTypes.func.isRequired,
-  text: propTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.objectOf().isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Button;

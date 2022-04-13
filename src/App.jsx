@@ -5,8 +5,11 @@ import { Home, Movie, NotFound } from './Pages';
 import MovieContext from './Contexts';
 
 function App() {
-  const [movie, setMovie] = useState({});
-  const movieMemo = useMemo(() => ({ movie, setMovie }), []);
+  const [movie, setMovie] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const movieMemo = useMemo(() => ({
+    movie, setMovie, loading, setLoading,
+  }), [loading]);
 
   return (
     <MovieContext.Provider value={movieMemo}>
@@ -15,7 +18,7 @@ function App() {
         <Background />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie" element={movie.name ? <Movie /> : <NotFound />} />
+          <Route path="/movie" element={movie.id ? <Movie movie={movie} /> : <NotFound />} />
         </Routes>
       </Router>
     </MovieContext.Provider>
