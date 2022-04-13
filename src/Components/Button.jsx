@@ -10,9 +10,15 @@ function Button({ onClick, className = '', children }) {
 }
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.objectOf().isRequired,
-  className: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  onClick: () => undefined,
+  children: {},
+  className: '',
 };
 
 export default Button;

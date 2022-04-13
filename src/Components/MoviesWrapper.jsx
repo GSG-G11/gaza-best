@@ -1,14 +1,14 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import Loader from './Loader';
 import MovieNotFound from './MovieNotFound';
-import MovieContext from '../Contexts';
 
 function MoviesWrapper(props) {
-  const { movies, movieFound, searchTerm } = props;
-  const { loading } = useContext(MovieContext);
+  const {
+    movies, movieFound, searchTerm, loading,
+  } = props;
 
   return (
     <div className="cards">
@@ -24,9 +24,14 @@ function MoviesWrapper(props) {
 }
 
 MoviesWrapper.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+  movies: PropTypes.arrayOf(PropTypes.objectOf()),
   movieFound: PropTypes.bool.isRequired,
   searchTerm: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
+
+MoviesWrapper.defaultProps = {
+  movies: [],
 };
 
 export default MoviesWrapper;
