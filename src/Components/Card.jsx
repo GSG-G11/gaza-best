@@ -14,11 +14,10 @@ function Card({ movieInfo }) {
     year,
     rating,
     genres,
-    id,
   } = movieInfo;
 
   const navigate = useNavigate();
-  const { setMovieId } = useContext(MovieContext);
+  const { setMovie } = useContext(MovieContext);
 
   return (
     <div className="card-top">
@@ -30,12 +29,12 @@ function Card({ movieInfo }) {
             <span className="rate">{`${rating ? `${rating} / 10` : 'Not Rated Yet'}`}</span>
           </div>
           <div className="genres">
-            {genres.map((genre) => <span key={genre}>{genre}</span>)}
+            {genres.slice(0, 3).map((genre) => <span key={genre}>{genre}</span>)}
           </div>
           <Button
             className="download"
             onClick={() => {
-              setMovieId(id);
+              setMovie(movieInfo);
               navigate('/movie');
             }}
           >
@@ -64,7 +63,6 @@ Card.propTypes = {
   year: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-  id: PropTypes.number.isRequired,
 };
 
 export default Card;

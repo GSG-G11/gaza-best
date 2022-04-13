@@ -412,3 +412,14 @@ form #search-field {
       transform: rotate(calc(360deg * var(--direction)));
   }
 }
+
+.movie-not-found {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-inline: 15px;
+}
+
+.movie-not-found span {
+  color: var(--clr-primary);
+}

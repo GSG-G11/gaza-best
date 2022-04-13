@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Movie(props) {
-  const { movieId } = props;
+  const { movie } = props;
+
+  console.log(movie);
 
   return (
-    <div>{movieId}</div>
+    <div>hello, world</div>
   );
 }
 
 Movie.propTypes = {
-  movieId: PropTypes.number.isRequired,
+  movie: PropTypes.objectOf().isRequired,
 };
 
 export default Movie;

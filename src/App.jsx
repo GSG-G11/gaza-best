@@ -5,10 +5,10 @@ import { Home, Movie, NotFound } from './Pages';
 import MovieContext from './Contexts';
 
 function App() {
-  const [movieId, setMovieId] = useState(0);
+  const [movie, setMovie] = useState(0);
   const [loading, setLoading] = useState(true);
   const movieMemo = useMemo(() => ({
-    movieId, setMovieId, loading, setLoading,
+    movie, setMovie, loading, setLoading,
   }), [loading]);
 
   return (
@@ -18,7 +18,7 @@ function App() {
         <Background />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie" element={movieId ? <Movie movieId={movieId} /> : <NotFound />} />
+          <Route path="/movie" element={movie.id ? <Movie movie={movie} /> : <NotFound />} />
         </Routes>
       </Router>
     </MovieContext.Provider>
