@@ -4,6 +4,7 @@ import Button from './Button';
 import Container from './Container';
 import Search from './Search';
 import MoviesWrapper from './MoviesWrapper';
+import ScrollUp from './ScrollUp';
 
 export {
   Nav,
@@ -12,4 +13,5 @@ export {
   Container,
   Search,
   MoviesWrapper,
+  ScrollUp,
 };
