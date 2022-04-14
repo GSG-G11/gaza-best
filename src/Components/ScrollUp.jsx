@@ -1,16 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Button from './Button';
 
-function ScrollUp() {
-  const toUp = (e) => {
-    e.target.style.opacity = 0;
-    e.target.style.visibility = 'hidden';
+function ScrollUp({ appear }) {
+  const toUp = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
   };
+
   return (
-    <button onClick={(e) => toUp(e)} id="scroll-to-top" type="button" aria-label="scrollUp"><i className="fas fa-chevron-up" /></button>
+    <Button onClick={toUp} className={appear && 'active'} id="scroll-to-top">
+      <i className="fas fa-chevron-up" />
+    </Button>
   );
 }
+
+ScrollUp.propTypes = {
+  appear: PropTypes.bool.isRequired,
+};
+
 export default ScrollUp;

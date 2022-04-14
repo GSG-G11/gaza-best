@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {
-  Search, MoviesWrapper, Container, ScrollUp,
-} from '../Components';
+import { Search, MoviesWrapper, Container } from '../Components';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,16 +25,7 @@ function Home() {
 
     return () => cancelTokenSource.cancel();
   }, [searchTerm]);
-  const [appear, setAppear] = useState(false);
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= 50) {
-        setAppear(true);
-      } else {
-        setAppear(false);
-      }
-    });
-  }, []);
+
   return (
     <Container>
       <Search
@@ -50,7 +39,6 @@ function Home() {
         searchTerm={searchTerm}
         loading={loading}
       />
-      { appear && <ScrollUp />}
     </Container>
   );
 }
