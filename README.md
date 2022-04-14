@@ -66,6 +66,9 @@
       </ul>
     </li>
     <li>
+      <a href="#api">API</a>
+    </li>
+    <li>
       <a href="#team">Contributors</a>
     </li>
   </ol>
@@ -130,6 +133,11 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## API <span id="api"></span>
+`GazaBest` uses [YTS.mx](https://yts.mx/api) API
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contributors <span id="team"></span>
