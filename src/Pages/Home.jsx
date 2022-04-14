@@ -27,7 +27,16 @@ function Home() {
 
     return () => cancelTokenSource.cancel();
   }, [searchTerm]);
-
+  const [appear, setAppear] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 50) {
+        setAppear(true);
+      } else {
+        setAppear(false);
+      }
+    });
+  }, []);
   return (
     <Container>
       <Search
@@ -41,7 +50,7 @@ function Home() {
         searchTerm={searchTerm}
         loading={loading}
       />
-      <ScrollUp />
+      { appear && <ScrollUp />}
     </Container>
   );
 }

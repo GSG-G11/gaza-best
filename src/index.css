@@ -584,35 +584,3 @@ form #search-field {
     text-align: center;
   }
 }
-/* ////////////scroll up button >>> /////////// */
-
-/* #scroll-to-top.not-active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-#scroll-to-top {
-  width: 45px;
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  width: var(--width);
-  height: var(--width);
-  background-color: var(--clr-primary);
-  border: none;
-  color: #333;
-  font-size: 1.3rem;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: #47981e;
-  opacity: 0;
-  transition: 0.5s;
-  pointer-events: none;
-} */
-
-/* #scroll-to-top {
-  width: 200px;
-  height:200px;
-  background-color: aqua;
-  position: absolute;
-} */
